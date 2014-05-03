@@ -36,7 +36,12 @@ PRODUCT_COPY_FILES += \
 # Audio
 PRODUCT_PACKAGES += \
     audio_policy.msm8960 \
-    audio.primary.msm8960
+    audio.primary.MSM8960 \
+    libaudioparameter \
+    tinyplay \
+    tinycap \
+    tinymix \
+    tinypcminfo
 
 # HAL
 PRODUCT_PACKAGES += \
@@ -116,7 +121,7 @@ PRODUCT_COPY_FILES += \
 # Audio configuration
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/audio_policy.conf:system/etc/audio_policy.conf \
-    $(LOCAL_PATH)/config/snd_soc_msm_2x:system/etc/snd_soc_msm/snd_soc_msm_2x
+    $(LOCAL_PATH)/config/mixer_paths.xml:system/etc/mixer_paths.xml
 
 # Charger mode setup
 PRODUCT_COPY_FILES += \

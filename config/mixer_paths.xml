@@ -47,19 +47,41 @@
     <ctl name="Voice Stub Tx Mixer INTERNAL_BT_SCO_TX" value="0" />
     <ctl name="Voice Stub Tx Mixer SLIM_1_TX" value="0" />
     <ctl name="Voice Stub Tx Mixer STUB_1_TX_HL" value="0" />
+    <ctl name="Voice Stub Tx Mixer MI2S_TX" value="0" />
+    <ctl name="Voice Stub Tx Mixer AFE_PCM_TX" value="0" />
     <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia1" value="0" />
     <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia2" value="0" />
     <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia5" value="0" />
     <ctl name="INTERNAL_BT_SCO_RX_Voice Mixer Voice Stub" value="0" />
     <ctl name="MultiMedia5 Mixer SLIM_0_TX" value="0" />
+    <ctl name="MultiMedia5 Mixer AFE_PCM_TX" value="0" />
+    <ctl name="MultiMedia5 Mixer INTERNAL_BT_SCO_TX" value="0" />
+    <ctl name="MultiMedia4 Mixer MI2S_TX" value="0" />
+    <ctl name="MultiMedia4 Mixer SLIM_0_TX" value="0" />
+    <ctl name="MultiMedia2 Mixer MI2S_TX" value="0" />
+    <ctl name="MultiMedia1 Mixer MI2S_TX" value="0" />
     <ctl name="MultiMedia1 Mixer SLIM_0_TX" value="0" />
+    <ctl name="MultiMedia1 Mixer INTERNAL_BT_SCO_TX" value="0" />
+    <ctl name="MultiMedia1 Mixer AFE_PCM_TX" value="0" />
+    <ctl name="MultiMedia1 Mixer VOC_REC_DL" value="0" />
+    <ctl name="MultiMedia1 Mixer VOC_REC_UL" value="0" />
+    <ctl name="MultiMedia1 Mixer SLIM_4_TX" value="0" />
+    <ctl name="MI2S_RX Audio Mixer MultiMedia1" value="0" />
+    <ctl name="MI2S_RX Audio Mixer MultiMedia2" value="0" />
+    <ctl name="MI2S_RX Audio Mixer MultiMedia3" value="0" />
+    <ctl name="MI2S_RX Audio Mixer MultiMedia4" value="0" />
+    <ctl name="MI2S_RX Audio Mixer MultiMedia5" value="0" />
+    <ctl name="MI2S_RX Audio Mixer MultiMedia6" value="0" />
     <ctl name="HDMI Mixer MultiMedia1" value="0" />
     <ctl name="HDMI Mixer MultiMedia2" value="0" />
     <ctl name="HDMI Mixer MultiMedia5" value="0" />
     <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia1" value="0" />
     <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia2" value="0" />
+    <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia3" value="0" />
+    <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia4" value="0" />
     <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia5" value="0" />
     <ctl name="IIR1 INP1 MUX" value="ZERO" />
+    <ctl name="IIR2 INP1 MUX" value="ZERO" />
     <ctl name="SLIM TX10 MUX" value="ZERO" />
     <ctl name="SLIM TX9 MUX" value="ZERO" />
     <ctl name="SLIM TX8 MUX" value="ZERO" />
@@ -80,7 +102,10 @@
     <ctl name="DEC3 MUX" value="ZERO" />
     <ctl name="DEC2 MUX" value="ZERO" />
     <ctl name="DEC1 MUX" value="ZERO" />
-    <ctl name="CLASS_H_DSM MUX" value="ZERO" />
+    <ctl name="RX6 DSM MUX" value="ZERO" />
+    <ctl name="RX4 DSM MUX" value="ZERO" />
+    <ctl name="RX3 MIX2 INP2" value="ZERO" />
+    <ctl name="RX3 MIX2 INP1" value="ZERO" />
     <ctl name="RX2 MIX2 INP2" value="ZERO" />
     <ctl name="RX2 MIX2 INP1" value="ZERO" />
     <ctl name="RX1 MIX2 INP2" value="ZERO" />
@@ -165,6 +190,12 @@
         <ctl name="Voice_Tx Mixer SLIM_0_TX_Voice" value="1" />
     </path>
 
+    <path name="voice-call-mi2s">
+		<ctl name="VOC_EXT_EC MUX" value="1" />
+        <ctl name="MI2S_RX_Voice Mixer CSVoice" value="1" />
+        <ctl name="Voice_Tx Mixer SLIM_0_TX_Voice" value="1" />
+    </path>
+
     <path name="voice-call hdmi">
         <ctl name="HDMI_RX_Voice Mixer CSVoice" value="1" />
         <ctl name="Voice_Tx Mixer SLIM_0_TX_Voice" value="1" />
@@ -214,9 +245,7 @@
     <path name="speaker">
         <ctl name="SLIM_0_RX Channels" value="One" />
         <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
-        <ctl name="RX1 MIX1 INP1" value="RX1" />
-        <ctl name="CLASS_H_DSM MUX" value="DSM_HPHL_RX1" />
-        <ctl name="DAC1 Switch" value="1" />
+        <ctl name="RX3 MIX1 INP1" value="RX1" />
     </path>
 
     <path name="speaker-mic">
@@ -227,7 +256,7 @@
         <ctl name="SLIM_0_RX Channels" value="One" />
         <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
-        <ctl name="CLASS_H_DSM MUX" value="DSM_HPHL_RX1" />
+        <ctl name="EAR PA Gain" value="POS_2_DB" />
         <ctl name="DAC1 Switch" value="1" />
     </path>
 
@@ -242,7 +271,6 @@
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RX2 MIX1 INP1" value="RX2" />
         <ctl name="HPHL DAC Switch" value="1" />
-        <ctl name="CLASS_H_DSM MUX" value="DSM_HPHL_RX1" />
         <ctl name="HPHL Volume" value="9" />
         <ctl name="HPHR Volume" value="9" />
     </path>
@@ -337,23 +365,21 @@
     <path name="dmic-endfire">
         <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
         <ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
-        <ctl name="SLIM TX7 MUX" value="DEC7" />
-        <ctl name="DEC7 MUX" value="DMIC1" />
-        <ctl name="SLIM TX8 MUX" value="DEC10" />
-        <ctl name="DEC10 MUX" value="DMIC3" />
+        <ctl name="SLIM TX7 MUX" value="DEC4" />
+        <ctl name="DEC4 MUX" value="ADC3" />
+        <ctl name="SLIM TX8 MUX" value="DEC3" />
+        <ctl name="DEC3 MUX" value="ADC4" />
         <ctl name="SLIM_0_TX Channels" value="Two" />
-        <ctl name="IIR1 INP1 MUX" value="DEC7" />
     </path>
 
     <path name="dmic-broadside">
         <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
         <ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
-        <ctl name="SLIM TX7 MUX" value="DEC7" />
-        <ctl name="DEC7 MUX" value="DMIC1" />
-        <ctl name="SLIM TX8 MUX" value="DEC8" />
-        <ctl name="DEC8 MUX" value="DMIC2" />
+        <ctl name="SLIM TX7 MUX" value="DEC4" />
+        <ctl name="DEC6 MUX" value="ADC1" />
+        <ctl name="SLIM TX8 MUX" value="DEC6" />
+        <ctl name="DEC6 MUX" value="ADC1" />
         <ctl name="SLIM_0_TX Channels" value="Two" />
-        <ctl name="IIR1 INP1 MUX" value="DEC7" />
     </path>
 
     <path name="speaker-dmic-endfire">
@@ -418,7 +444,6 @@
         <ctl name="SLIM_0_RX Channels" value="One" />
         <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
-        <ctl name="CLASS_H_DSM MUX" value="DSM_HPHL_RX1" />
         <ctl name="HPHL DAC Switch" value="1" />
         <ctl name="HPHL Volume" value="9" />
     </path>
